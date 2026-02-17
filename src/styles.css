@@ -1,0 +1,124 @@
+:root {
+  --bg: #f4f4f1;
+  --text: #202020;
+  --panel: #ffffff;
+  --border: #c9c9c1;
+  --snake: #1f6f43;
+  --food: #bb2e2e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: sans-serif;
+}
+
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.hud h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.hud-meta p {
+  margin: 0.2rem 0;
+  text-align: right;
+}
+
+.speed-control {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.speed-control input {
+  width: 120px;
+}
+
+.board {
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  width: min(100%, 320px);
+  border: 1px solid var(--border);
+  background: var(--panel);
+  touch-action: none;
+}
+
+.play-area {
+  margin-top: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.cell {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 1px solid #ecece6;
+}
+
+.cell.snake {
+  background: var(--snake);
+}
+
+.cell.food {
+  background: var(--food);
+}
+
+.controls {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+button {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.touch-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  min-width: 170px;
+}
+
+.touch-controls .row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .play-area {
+    flex-direction: column;
+  }
+
+  .board {
+    margin-top: 0;
+  }
+}

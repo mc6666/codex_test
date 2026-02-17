@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hud">
+        <div>
+          <h1>Snake</h1>
+          <label class="speed-control" for="speed">
+            Speed
+            <input id="speed" type="range" min="60" max="300" step="10" value="300" />
+            <span id="speed-value">300ms</span>
+          </label>
+        </div>
+        <div class="hud-meta">
+          <p>Score: <span id="score">0</span></p>
+          <p id="status">Running</p>
+        </div>
+      </header>
+
+      <section class="play-area">
+        <section id="board" class="board" aria-label="Snake game board"></section>
+
+        <section class="touch-controls" aria-label="Directional controls">
+          <button data-dir="up" type="button">Up</button>
+          <div class="row">
+            <button data-dir="left" type="button">Left</button>
+            <button data-dir="down" type="button">Down</button>
+            <button data-dir="right" type="button">Right</button>
+          </div>
+          <section class="controls">
+            <button id="pause" type="button">Pause</button>
+            <button id="restart" type="button">Restart</button>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
